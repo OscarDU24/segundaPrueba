@@ -53,7 +53,7 @@
                     <children>
                         <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Menú Principal de Solicitudes" />
                         <Label style="-fx-font-size: 13px; -fx-text-fill: #555555;" text="Utilice el MenuBar o la ToolBar para navegar entre los formularios." />
-                        <Label style="-fx-font-size: 11px; -fx-text-fill: #888888;" text="(Haga clic derecho en esta zona para abrir el ContextMenu)" />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #888888;" text="(Haga clic derecho en esta zona para comenzar)" />
                     </children>
                 </VBox>
             </children>
