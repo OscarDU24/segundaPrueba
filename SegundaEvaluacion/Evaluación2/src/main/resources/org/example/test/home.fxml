@@ -1,17 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.layout.*?>
-
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.test.Controllers.homeController"
-      prefHeight="625.0" prefWidth="625.0" spacing="20" alignment="CENTER">
-    <Label fx:id="lblUser" text=""/>
-    <HBox alignment="CENTER" spacing="20">
-        <Button fx:id="btnConfig" text="Configuracion" onAction="#abrirConfig"/>
-        <Button fx:id="btnCerrarSesion" text="Log out" onAction="#cerrarSesion"/>
-    </HBox>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
+<VBox fx:id="mainContainer" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.test.Controllers.homeController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu text="Navegación">
+                    <items>
+                        <MenuItem onAction="#abrirRegistro" text="Registrar Cliente" />
+                        <MenuItem onAction="#abrirConsulta" text="Consultar Clientes" />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#cerrarSesion" text="Cerrar Sesión" />
+                    </items>
+                </Menu>
+                <Menu text="Herramientas">
+                    <items>
+                        <MenuItem onAction="#seleccionarCarpeta" text="Seleccionar Carpeta" />
+                        <MenuItem onAction="#abrirConfig" text="Abrir Configuración (Ventana)" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- ToolBar -->
+        <ToolBar>
+            <items>
+                <Button onAction="#abrirRegistro" text="Nuevo Cliente" />
+                <Button onAction="#abrirConsulta" text="Ver Registros" />
+                <Separator />
+                <Button onAction="#seleccionarCarpeta" text="Seleccionar Carpeta" />
+                <Button onAction="#cerrarSesion" text="Salir" />
+            </items>
+        </ToolBar>
+
+        <StackPane VBox.vgrow="ALWAYS">
+            <children>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Menú Principal de Solicitudes" />
+                        <Label style="-fx-font-size: 13px; -fx-text-fill: #555555;" text="Utilice el MenuBar o la ToolBar para navegar entre los formularios." />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #888888;" text="(Haga clic derecho en esta zona para abrir el ContextMenu)" />
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
 </VBox>
