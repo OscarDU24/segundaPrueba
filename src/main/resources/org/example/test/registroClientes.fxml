@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.test.Controllers.registroClienteControllers"
+      prefWidth="700.0"
+      prefHeight="650.0"
+      alignment="CENTER"
+      spacing="20.0">
+
+    <Label text="Registro de Cliente"
+           style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="15.0"
+              vgap="15.0"
+              alignment="CENTER">
+        <Label text="Nombres:"
+               GridPane.columnIndex="0"
+               GridPane.rowIndex="0"/>
+
+        <TextField fx:id="txtNombre"
+                   prefWidth="300.0"
+                   promptText="Ingrese los nombres"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="0"/>
+
+        <Label text="Apellidos:"
+               GridPane.columnIndex="0"
+               GridPane.rowIndex="1"/>
+
+        <TextField fx:id="txtApellido"
+                   prefWidth="300.0"
+                   promptText="Ingrese los apellidos"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"/>
+
+        <Label text="Tipo de cliente:"
+               GridPane.columnIndex="0"
+               GridPane.rowIndex="2"/>
+
+        <ComboBox fx:id="cbTipoCliente"
+                  prefWidth="300.0"
+                  promptText="Seleccione el tipo de cliente"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="2"/>
+
+        <Label text="Ciudad:"
+               GridPane.columnIndex="0"
+               GridPane.rowIndex="3"/>
+
+        <ComboBox fx:id="cbCiudad"
+                  prefWidth="300.0"
+                  promptText="Seleccione la ciudad"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="3"/>
+
+        <Label text="Fecha de nacimiento:"
+               GridPane.columnIndex="0"
+               GridPane.rowIndex="4"/>
+
+        <DatePicker fx:id="dpFechaNacimiento"
+                    prefWidth="300.0"
+                    promptText="Seleccione la fecha"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="4"/>
+
+    </GridPane>
+
+    <Label text="Servicios de interés:"
+           style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="20.0"
+          alignment="CENTER">
+        <CheckBox fx:id="chkInternet"
+                  text="Internet"/>
+        <CheckBox fx:id="chkTelefonia"
+                  text="Telefonía"/>
+        <CheckBox fx:id="chkTelevision"
+                  text="Televisión"/>
+    </HBox>
+
+    <VBox spacing="10.0"
+          alignment="CENTER">
+        <Label text="Fotografía:"
+               style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+        <ImageView fx:id="imgFoto"
+                   fitWidth="130.0"
+                   fitHeight="130.0"
+                   preserveRatio="true"/>
+        <Button fx:id="btnSeleccionarFoto"
+                text="Seleccionar fotografía"
+                onAction="#seleccionarFoto"/>
+    </VBox>
+
+    <HBox spacing="20.0"
+          alignment="CENTER">
+        <Button fx:id="btnGuardar"
+                text="Guardar"
+                prefWidth="100.0"
+                onAction="#guardar"/>
+        <Button fx:id="btnLimpiar"
+                text="Limpiar"
+                prefWidth="100.0"
+                onAction="#limpiar"/>
+        <Button fx:id="btnCancelar"
+                text="Cancelar"
+                prefWidth="100.0"
+                onAction="#cancelar"/>
+    </HBox>
+</VBox>
