@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="622.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo1.controller.ConsultasController">
+    <top>
+        <VBox alignment="CENTER" prefHeight="60" spacing="10" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets left="20" right="20" />
+            </padding>
+            <children>
+                <Label text="Consulta de clientes registrados">
+                    <font>
+                        <Font name="System bold" size="18" />
+                    </font>
+                </Label>
+                <HBox alignment="BOTTOM_LEFT" prefHeight="40" spacing="10" BorderPane.alignment="BOTTOM_LEFT">
+                    <children>
+                        <Label text="Buscar cliente: " />
+                        <TextField fx:id="txtBuscar" prefHeight="25.0" prefWidth="263.0" promptText="Ingrese el cliente (nombre del cliente) a buscar" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tablaClientes" onMouseClicked="#onTableItemClicked" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colNombre" prefWidth="180.0" text="Nombre Completo" />
+                <TableColumn fx:id="colTipoCliente" prefWidth="120.0" text="Tipo de Cliente" />
+                <TableColumn fx:id="colCiudad" prefWidth="120.0" text="Ciudad" />
+                <TableColumn fx:id="colFechaNacimiento" prefWidth="130.0" text="Fecha Nacimiento" />
+                <TableColumn fx:id="colTipoSolicitud" prefWidth="150.0" text="Tipo de Solicitud" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets right="20.0" />
+            </padding>
+            <children>
+                <Button mnemonicParsing="false" onAction="#onRegresar" text="Regresar al Menú" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
