@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.test.Controllers.detalleController"
+      prefWidth="420.0" prefHeight="480.0"
+      alignment="CENTER" spacing="20.0">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <Label text="Detalle del Cliente" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+    <ImageView fx:id="imgFoto" fitWidth="120.0" fitHeight="120.0" preserveRatio="true"/>
+
+    <GridPane hgap="12.0" vgap="10.0" alignment="CENTER">
+        <Label text="Nombre completo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Label fx:id="lblNombre" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Tipo de cliente:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Label fx:id="lblTipoCliente" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Ciudad:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label fx:id="lblCiudad" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Fecha de nacimiento:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label fx:id="lblFechaNacimiento" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Tipo de solicitud:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Label fx:id="lblTipoSolicitud" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Servicios de interés:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <Label fx:id="lblServicios" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+
+    <Button text="Cerrar" onAction="#cerrar" prefWidth="100.0"/>
+</VBox>

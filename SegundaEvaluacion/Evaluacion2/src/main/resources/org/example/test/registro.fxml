@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.test.Controllers.registroController"
+            prefHeight="600.0" prefWidth="600.0" alignment="CENTER" spacing="20">
+
+    <Label text="Registrate"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="txtUsuario"
+               promptText="Ingrese su usuario"
+               prefWidth="300"
+               maxWidth="300"/>
+
+    <PasswordField fx:id="txtPassword"
+                   promptText="Ingrese su contraseña"
+                   prefWidth="300"
+                   maxWidth="300"/>
+
+    <PasswordField fx:id="txtConfirmarPassword"
+                   promptText="Confirme su contraseña"
+                   prefWidth="300"
+                   maxWidth="300"/>
+    <HBox>
+
+    </HBox>
+    <Button fx:id="btnRegistrar"
+            text="Registrarse"
+            onAction="#registrar"
+            prefWidth="200"/>
+    <Label text="¿Ya tienes una cuenta?"/>
+    <Hyperlink fx:id="iniciarSesion"
+               text="Iniciar Sesión"
+               onAction="#abrirLogin"/>
+</VBox>
