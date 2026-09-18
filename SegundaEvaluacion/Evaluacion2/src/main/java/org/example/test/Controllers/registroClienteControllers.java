@@ -15,6 +15,7 @@ import org.example.test.Util.DatosCompartidos;
 import java.io.File;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ResourceBundle;
 
 /**
@@ -122,7 +123,17 @@ public class registroClienteControllers implements Initializable {
             if (servicios.length() > 0) servicios.append(", ");
             servicios.append("Televisión");
         }
-
+        if (fechaNacimiento != null) {
+            int edad = Period.between(fechaNacimiento, LocalDate.now()).getYears();
+            if (edad < 18) {
+                Alert alerta = new Alert(Alert.AlertType.WARNING);
+                alerta.setTitle("Edad no permitida");
+                alerta.setHeaderText("Cliente menor de edad");
+                alerta.setContentText("El cliente debe ser mayor de 18 años para poder registrarse.");
+                alerta.showAndWait();
+                return;
+            }
+        }
         // Validaciones básicas antes de permitir guardar (Alert de advertencia).
         String[] errores = {
                 ClienteValidator.validarNombre(nombre),
