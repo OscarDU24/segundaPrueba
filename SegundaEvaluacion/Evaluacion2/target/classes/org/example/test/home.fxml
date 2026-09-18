@@ -44,22 +44,11 @@
         </menus>
     </MenuBar>
 
-    <!-- ToolBar: accesos rápidos a Registro y Consulta -->
-    <ToolBar>
-        <items>
-            <Button text="Registrar Cliente" onAction="#abrirRegistroCliente"/>
-            <Button text="Consultar Clientes" onAction="#abrirConsultas"/>
-            <Button text="Cerrar sesión" onAction="#cerrarSesion"/>
-        </items>
-    </ToolBar>
-
-    <VBox alignment="CENTER" spacing="20" VBox.vgrow="ALWAYS">
+    <!-- Barra de sesión: muestra el usuario activo en la esquina superior izquierda -->
+    <HBox alignment="CENTER_LEFT">
         <padding>
-            <Insets top="40.0"/>
+            <Insets left="10.0" top="6.0" bottom="6.0"/>
         </padding>
-        <Label text="Sistema de Registro y Consulta de Solicitudes"
-               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-
         <!-- ContextMenu: clic derecho sobre el label de bienvenida -->
         <Label fx:id="lblUser" text="">
             <contextMenu>
@@ -72,6 +61,21 @@
                 </ContextMenu>
             </contextMenu>
         </Label>
+    </HBox>
+
+    <!-- ToolBar: acceso rápido para cerrar sesión -->
+    <ToolBar style="-fx-alignment: CENTER;">
+        <items>
+            <Button text="Cerrar sesión" onAction="#cerrarSesion"/>
+        </items>
+    </ToolBar>
+
+    <VBox alignment="CENTER" spacing="20" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="40.0"/>
+        </padding>
+        <Label text="Sistema de Registro y Consulta de Solicitudes"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
 
         <HBox alignment="CENTER" spacing="20">
             <Button text="Registrar Cliente" onAction="#abrirRegistroCliente"/>

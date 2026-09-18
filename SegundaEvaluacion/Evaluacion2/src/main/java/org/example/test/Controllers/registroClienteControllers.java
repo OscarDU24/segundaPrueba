@@ -42,6 +42,7 @@ public class registroClienteControllers implements Initializable {
     @FXML private Button btnGuardar;
     @FXML private Button btnLimpiar;
     @FXML private Button btnCancelar;
+    @FXML private Button btnVolverMenu;
 
     private String rutaFoto;
 
@@ -208,6 +209,15 @@ public class registroClienteControllers implements Initializable {
     @FXML
     private void cancelar() {
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void volverAlMenu() {
+        // Esta ventana se abre como una Stage independiente desde el
+        // menú principal (home), por lo que "volver al menú" simplemente
+        // cierra esta ventana y deja visible la ventana del menú.
+        Stage stage = (Stage) btnVolverMenu.getScene().getWindow();
         stage.close();
     }
 }

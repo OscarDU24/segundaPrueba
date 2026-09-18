@@ -7,9 +7,9 @@
 
 <BorderPane prefHeight="622.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.test.Controllers.consultasController">
     <top>
-        <VBox alignment="CENTER" prefHeight="70" spacing="10" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
             <padding>
-                <Insets left="20" right="20" top="10"/>
+                <Insets left="20" right="20" top="10" bottom="15"/>
             </padding>
             <children>
                 <Label text="Consulta de clientes registrados">
@@ -17,13 +17,14 @@
                         <Font name="System bold" size="18" />
                     </font>
                 </Label>
-                <HBox alignment="BOTTOM_LEFT" prefHeight="40" spacing="10" BorderPane.alignment="BOTTOM_LEFT">
+                <HBox alignment="CENTER_LEFT" prefHeight="40" spacing="10" BorderPane.alignment="BOTTOM_LEFT">
                     <children>
                         <Label text="Buscar cliente: " />
                         <TextField fx:id="txtBuscar" prefHeight="25.0" prefWidth="230.0" promptText="Nombre del cliente a buscar" />
                         <Button mnemonicParsing="false" onAction="#filtrarPorCiudad" text="Filtrar por ciudad..." />
                     </children>
                 </HBox>
+                <Separator />
             </children>
         </VBox>
     </top>
@@ -39,6 +40,9 @@
             <columnResizePolicy>
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
+            <BorderPane.margin>
+                <Insets left="20" right="20" top="10" bottom="10"/>
+            </BorderPane.margin>
         </TableView>
     </center>
     <bottom>

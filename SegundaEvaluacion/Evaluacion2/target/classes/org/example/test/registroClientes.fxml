@@ -123,5 +123,9 @@
                 text="Cancelar"
                 prefWidth="100.0"
                 onAction="#cancelar"/>
+        <Button fx:id="btnVolverMenu"
+                text="Volver al menú"
+                prefWidth="130.0"
+                onAction="#volverAlMenu"/>
     </HBox>
 </VBox>

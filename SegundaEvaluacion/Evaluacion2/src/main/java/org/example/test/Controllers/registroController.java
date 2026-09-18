@@ -25,7 +25,7 @@ public class registroController {
     @FXML private PasswordField txtConfirmarPassword;
 
     @FXML
-    public void registrar() {
+    public void registrar(ActionEvent event) throws IOException {
         if (txtPassword.getText().equals(txtConfirmarPassword.getText()) &&
                 !UserService.BuscarUsuario(txtUsuario.getText()) &&
                 ValidatorService.PasswordValida(txtPassword.getText()) &&
@@ -39,6 +39,10 @@ public class registroController {
             alert.setHeaderText("Operación exitosa");
             alert.setContentText("Se Registró el usuario " + txtUsuario.getText() + " Correctamente");
             alert.showAndWait();
+
+            // Tras crear el usuario, se envía automáticamente a la
+            // pantalla de inicio de sesión para que pueda ingresar.
+            abrirLogin(event);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
